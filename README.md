@@ -1,6 +1,6 @@
-# Rally
+# Sportside World
 
-Rally is a database-free front-end prototype for connecting young athletes
+Sportside World is a database-free front-end prototype for connecting young athletes
 with trusted sports mentors.
 
 ## Included
