@@ -1,0 +1,43 @@
+# Credentials and local secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Local environments and dependency caches
+.venv/
+venv/
+node_modules/
+vendor/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Compiled and packaged output
+build/
+dist/
+target/
+*.py[cod]
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+
+# Temporary and regenerable output
+tmp/
+scratch/
+*.tmp
+*.temp
+*.log
+*.swp
+*~
+
+# Platform and editor metadata
+.DS_Store
+.idea/
+.vscode/
