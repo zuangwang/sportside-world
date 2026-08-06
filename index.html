@@ -109,12 +109,16 @@
       <section class="sports-strip" aria-label="Sports available">
         <p>Whatever your sport, there’s someone in your corner.</p>
         <div class="sport-list">
-          <button data-sport-jump="Basketball"><span>◉</span> Basketball</button>
-          <button data-sport-jump="Soccer"><span>⬡</span> Soccer</button>
-          <button data-sport-jump="Track & Field"><span>≈</span> Track</button>
-          <button data-sport-jump="Tennis"><span>●</span> Tennis</button>
-          <button data-sport-jump="Volleyball"><span>✣</span> Volleyball</button>
-          <button data-sport-jump="Swimming"><span>≋</span> Swimming</button>
+          <button data-sport-jump="Basketball"><span aria-hidden="true">🏀</span> Basketball</button>
+          <button data-sport-jump="Soccer"><span aria-hidden="true">⚽</span> Soccer</button>
+          <button data-sport-jump="Football"><span aria-hidden="true">🏈</span> Football</button>
+          <button data-sport-jump="Baseball"><span aria-hidden="true">⚾</span> Baseball</button>
+          <button data-sport-jump="Softball"><span aria-hidden="true">🥎</span> Softball</button>
+          <button data-sport-jump="Volleyball"><span aria-hidden="true">🏐</span> Volleyball</button>
+          <button data-sport-jump="Tennis"><span aria-hidden="true">🎾</span> Tennis</button>
+          <button data-sport-jump="Golf"><span aria-hidden="true">⛳</span> Golf</button>
+          <button data-sport-jump="Track & Field"><span aria-hidden="true">🏃</span> Track</button>
+          <button data-sport-jump="Swimming"><span aria-hidden="true">🏊</span> Swimming</button>
         </div>
       </section>
 
@@ -191,8 +195,9 @@
             <span>Sport</span>
             <select id="sport-filter">
               <option value="">All sports</option>
-              <option>Basketball</option><option>Soccer</option><option>Track & Field</option>
-              <option>Tennis</option><option>Volleyball</option><option>Swimming</option>
+              <option>Basketball</option><option>Soccer</option><option>Football</option>
+              <option>Baseball</option><option>Softball</option><option>Volleyball</option>
+              <option>Tennis</option><option>Golf</option><option>Track & Field</option><option>Swimming</option>
             </select>
           </label>
           <label>
@@ -425,7 +430,7 @@
                   </label>
                   <div class="field-grid">
                     <label><span>Reel title</span><input name="title" required maxlength="60" placeholder="Game-winning shot"></label>
-                    <label><span>Sport</span><select name="sport" required><option value="">Choose a sport</option><option>Basketball</option><option>Soccer</option><option>Track & Field</option><option>Tennis</option><option>Volleyball</option><option>Swimming</option><option>Other</option></select></label>
+                    <label><span>Sport</span><select name="sport" required><option value="">Choose a sport</option><option>Basketball</option><option>Soccer</option><option>Football</option><option>Baseball</option><option>Softball</option><option>Volleyball</option><option>Tennis</option><option>Golf</option><option>Track & Field</option><option>Swimming</option><option>Other</option></select></label>
                   </div>
                   <label><span>Caption</span><textarea name="caption" maxlength="180" rows="3" placeholder="What should mentors know about this play?"></textarea></label>
                   <fieldset class="reel-visibility">
@@ -601,7 +606,7 @@
           </div>
           <label><span>Email address</span><input required type="email" name="email" placeholder="jordan@example.com"></label>
           <div class="field-grid">
-            <label><span>Primary sport</span><select required name="sport"><option value="">Choose a sport</option><option>Basketball</option><option>Soccer</option><option>Track & Field</option><option>Tennis</option><option>Volleyball</option><option>Swimming</option><option>Other</option></select></label>
+            <label><span>Primary sport</span><select required name="sport"><option value="">Choose a sport</option><option>Basketball</option><option>Soccer</option><option>Football</option><option>Baseball</option><option>Softball</option><option>Volleyball</option><option>Tennis</option><option>Golf</option><option>Track & Field</option><option>Swimming</option><option>Other</option></select></label>
             <label><span>Experience level</span><select required name="experience"><option value="">Select one</option><option>College athlete</option><option>Professional athlete</option><option>Coach</option><option>Sports professional</option></select></label>
           </div>
           <label><span>What would you help athletes with?</span><textarea required name="bio" rows="4" placeholder="Share a few topics, experiences, or lessons you could offer..."></textarea></label>

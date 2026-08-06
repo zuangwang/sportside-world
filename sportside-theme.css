@@ -122,7 +122,14 @@ body { background: #fff; }
   transition: .2s;
 }
 .sport-list button:hover { color: #111; background: #ffb000; }
-.sport-list span { color: #ff7a00; }
+.sport-list span {
+  width: 25px;
+  display: inline-grid;
+  place-items: center;
+  color: #ff7a00;
+  font-size: 21px;
+  line-height: 1;
+}
 
 .section { padding-top: 115px; padding-bottom: 115px; }
 .section-heading h2, .page-hero h1, .dashboard-welcome h1, .safety-hero h1, .apply-intro h1 {
