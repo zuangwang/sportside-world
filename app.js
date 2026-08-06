@@ -8,7 +8,7 @@ const mentors=[
 {id:"sam-patel",name:"Sam Patel",initials:"SP",sport:"Basketball",role:"Skills trainer",focus:["Training","Recruiting"],formats:["In person"],color:"#6c7851",number:"31",location:"New York, NY",availability:"1 spot",experience:"9 years",bio:"Sam combines skills development with honest recruiting advice so athletes can focus their energy and present their game clearly."},
 {id:"taylor-williams",name:"Taylor Williams",initials:"TW",sport:"Soccer",role:"Former college goalkeeper",focus:["College transition","Confidence","Leadership"],formats:["Virtual","In person"],color:"#84604f",number:"01",location:"Raleigh, NC",availability:"3 spots",experience:"4 years",bio:"Taylor mentors athletes through setbacks, big transitions, and the challenge of being a calm, vocal leader on the field."}
 ];
-const state={requests:[],filters:{search:"",sport:"",focus:"",formats:[]}};
+const state={requests:[],reels:[],filters:{search:"",sport:"",focus:"",formats:[]}};
 const growthData={
 height:{values:[62,64,66,68,69],label:"Current height",value:"5 ft 9 in",change:"↑ 7 in across this preview",title:"Height history preview"},
 weight:{values:[108,116,126,137,145],label:"Current weight",value:"145 lb",change:"↑ 37 lb across this preview",title:"Weight history preview"},
@@ -55,11 +55,48 @@ function toggleWatch(){
   button.innerHTML=watchConnected?"Disconnect demo <span>×</span>":"Connect smartwatch <span>＋</span>";
   showToast(watchConnected?"Demo watch connected":"Demo watch disconnected",watchConnected?"Sample health metrics are now visible. No device was accessed.":"The sample health metrics were cleared.");
 }
+function escapeHtml(value){return String(value).replace(/[&<>"']/g,character=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[character]))}
+function renderReels(){
+  const list=document.querySelector("#reels-list"),empty=document.querySelector("#reels-empty"),count=document.querySelector("#reel-count");
+  if(!list||!empty||!count)return;
+  count.textContent=state.reels.length+" reel"+(state.reels.length===1?"":"s");
+  empty.hidden=state.reels.length>0;
+  list.innerHTML=state.reels.map(reel=>`<article class="reel-item"><video controls playsinline preload="metadata" src="${reel.url}"></video><div class="reel-item-info"><div class="reel-item-meta"><span>${escapeHtml(reel.sport)}</span><span>${escapeHtml(reel.visibility)}</span></div><h3>${escapeHtml(reel.title)}</h3>${reel.caption?`<p>${escapeHtml(reel.caption)}</p>`:""}<div class="reel-item-actions"><button type="button" data-reel-delete="${reel.id}">Remove reel</button></div></div></article>`).join("");
+}
+function addReel(event){
+  event.preventDefault();
+  const form=event.currentTarget,file=form.elements.video.files[0];
+  if(!file)return;
+  if(!file.type.startsWith("video/")){showToast("Choose a video","Please select an MP4, WebM, or MOV playing video.");return}
+  if(file.size>150*1024*1024){showToast("Video is too large","Choose a playing video smaller than 150 MB.");return}
+  if(state.reels.length>=3){showToast("Free reel limit reached","Remove a reel or preview Premium access for unlimited playing reels.");return}
+  const data=new FormData(form);
+  state.reels.unshift({id:String(Date.now()),url:URL.createObjectURL(file),title:data.get("title"),sport:data.get("sport"),caption:data.get("caption"),visibility:data.get("visibility")});
+  form.reset();
+  document.querySelector("#reel-file-name").textContent="Choose your playing video";
+  renderReels();
+  showToast("Reel added","Your video is available only in this browser session.");
+}
 document.addEventListener("click",e=>{const route=e.target.closest("[data-route]");if(route){e.preventDefault();goToPage(route.dataset.route);return}const scroll=e.target.closest("[data-scroll]");if(scroll){e.preventDefault();goToPage("home");setTimeout(()=>document.querySelector(`#${scroll.dataset.scroll}`)?.scrollIntoView({behavior:"smooth"}),120);return}const profile=e.target.closest("[data-mentor-id]");if(profile){openProfile(profile.dataset.mentorId);return}const request=e.target.closest("[data-request-id]");if(request){openRequest(request.dataset.requestId);return}const sport=e.target.closest("[data-sport-jump]");if(sport){goToPage("discover");state.filters.sport=sport.dataset.sportJump;document.querySelector("#sport-filter").value=state.filters.sport;renderDirectory();return}if(e.target.closest("[data-report-open]")){openModal(reportModal);return}const closer=e.target.closest("[data-modal-close]");if(closer){closeModal(closer.closest(".modal-backdrop"));return}if(e.target.classList.contains("modal-backdrop"))closeModal(e.target);if(e.target.closest("[data-coming-soon]"))showToast("Coming next","This area is ready for a future database connection.")});
 document.addEventListener("click",e=>{const metric=e.target.closest("[data-growth-metric]");if(metric){renderGrowthChart(metric.dataset.growthMetric);return}if(e.target.closest("[data-watch-connect]")){toggleWatch();return}if(e.target.closest("[data-profile-action]"))showToast("Ready for the database","Editing and saved activity will be enabled when accounts and storage are connected.");const privacy=e.target.closest("#privacy-toggle");if(privacy){const isPublic=privacy.getAttribute("aria-pressed")!=="true";privacy.setAttribute("aria-pressed",String(isPublic));privacy.textContent=isPublic?"Make private":"Make public";const label=document.querySelector("#profile-visibility");label.classList.toggle("public",isPublic);label.innerHTML=isPublic?"<i></i> Public":"<i></i> Private";showToast(isPublic?"Profile set to public":"Profile set to private","Prototype only — this privacy choice is not saved.")}});
+document.addEventListener("click",e=>{
+  const profileScroll=e.target.closest("[data-profile-scroll]");
+  if(profileScroll){goToPage("athlete-profile");setTimeout(()=>document.querySelector("#"+profileScroll.dataset.profileScroll)?.scrollIntoView({behavior:"smooth",block:"start"}),120);return}
+  const premiumScroll=e.target.closest("[data-scroll-premium]");
+  if(premiumScroll){document.querySelector("#"+premiumScroll.dataset.scrollPremium)?.scrollIntoView({behavior:"smooth"});return}
+  if(e.target.closest("[data-premium-action]")){showToast("Premium waitlist preview","No payment or signup was submitted in this prototype.");return}
+  const remove=e.target.closest("[data-reel-delete]");
+  if(remove){const index=state.reels.findIndex(reel=>reel.id===remove.dataset.reelDelete);if(index>-1){URL.revokeObjectURL(state.reels[index].url);state.reels.splice(index,1);renderReels();showToast("Reel removed","The local video preview was removed.");}}
+});
 document.querySelector(".menu-button").addEventListener("click",e=>{mobileNav.classList.toggle("open");e.currentTarget.setAttribute("aria-expanded",mobileNav.classList.contains("open"))});
 document.querySelector("#mentor-search").addEventListener("input",e=>{state.filters.search=e.target.value;renderDirectory()});document.querySelector("#sport-filter").addEventListener("change",e=>{state.filters.sport=e.target.value;renderDirectory()});document.querySelector("#focus-filter").addEventListener("change",e=>{state.filters.focus=e.target.value;renderDirectory()});document.querySelectorAll('input[name="format"]').forEach(i=>i.addEventListener("change",()=>{state.filters.formats=[...document.querySelectorAll('input[name="format"]:checked')].map(x=>x.value);renderDirectory()}));document.querySelector("#sort-filter").addEventListener("change",renderDirectory);document.querySelector("#clear-filters").addEventListener("click",clearFilters);document.querySelector("#empty-clear").addEventListener("click",clearFilters);
 document.querySelector("#mentorship-request").addEventListener("submit",e=>{e.preventDefault();const form=e.currentTarget,data=new FormData(form),guardian=form.elements.guardianEmail;if(data.get("age")!=="18+"&&!guardian.value){guardian.setCustomValidity("Please add a guardian email for athletes under 18.");guardian.reportValidity();return}guardian.setCustomValidity("");state.requests.push({mentorId:data.get("mentorId"),goal:data.get("goal")});form.reset();closeModal(requestModal);renderRequests();showToast("Request added","It is visible in My requests until this page is refreshed.")});
+document.querySelector("#reel-upload-form").addEventListener("submit",addReel);
+document.querySelector("#reel-video").addEventListener("change",e=>{document.querySelector("#reel-file-name").textContent=e.target.files[0]?.name||"Choose your playing video"});
+const videoDropzone=document.querySelector(".video-dropzone");
+["dragenter","dragover"].forEach(type=>videoDropzone.addEventListener(type,e=>{e.preventDefault();videoDropzone.classList.add("dragging")}));
+["dragleave","drop"].forEach(type=>videoDropzone.addEventListener(type,e=>{e.preventDefault();videoDropzone.classList.remove("dragging")}));
+videoDropzone.addEventListener("drop",e=>{const video=[...e.dataTransfer.files].find(file=>file.type.startsWith("video/"));if(video){const transfer=new DataTransfer();transfer.items.add(video);document.querySelector("#reel-video").files=transfer.files;document.querySelector("#reel-file-name").textContent=video.name}});
 document.querySelector("#mentor-application").addEventListener("submit",e=>{e.preventDefault();e.currentTarget.reset();showToast("Interest noted","Demo complete — nothing was stored or sent.")});document.querySelector("#report-form").addEventListener("submit",e=>{e.preventDefault();e.currentTarget.reset();closeModal(reportModal);showToast("Demo report complete","No report was sent because this prototype has no backend.")});document.addEventListener("keydown",e=>{if(e.key==="Escape")document.querySelectorAll(".modal-backdrop.open").forEach(closeModal)});window.addEventListener("hashchange",()=>goToPage(location.hash.slice(1),false));
 document.addEventListener("click",e=>{const control=e.target.closest("[data-carousel-target]");if(!control)return;const carousel=document.querySelector("#"+control.dataset.carouselTarget);if(!carousel)return;carousel.scrollBy({left:carousel.clientWidth*.88*Number(control.dataset.carouselDirection),behavior:"smooth"})});
-renderMentors();renderRequests();renderGrowthChart("height");goToPage(location.hash.slice(1)||"home",false);
+renderMentors();renderRequests();renderReels();renderGrowthChart("height");goToPage(location.hash.slice(1)||"home",false);
