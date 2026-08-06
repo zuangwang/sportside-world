@@ -1,0 +1,194 @@
+/* Rally.co-inspired visual direction, adapted for the youth mentorship product. */
+:root {
+  --ink: #080808;
+  --ink-soft: #4d4d4d;
+  --cream: #f6f5f0;
+  --paper: #ffffff;
+  --lime: #ffb000;
+  --lime-dark: #e89d00;
+  --orange: #ff7a00;
+  --mint: #ffd773;
+  --line: #dedbd2;
+  --shadow: 0 20px 45px rgba(0, 0, 0, .12);
+}
+
+body { background: #fff; }
+.page.active { animation: none; }
+.prototype-bar { height: 34px; color: #111; background: #ffb000; }
+.prototype-bar span { color: #fff; background: #111; }
+.prototype-bar p { color: #111; opacity: 1; }
+
+.site-header {
+  height: 84px;
+  color: #fff;
+  background: #050505;
+  border-bottom: 2px solid #ffb000;
+  backdrop-filter: none;
+}
+.brand { color: #fff; text-transform: uppercase; letter-spacing: .01em; }
+.brand-mark { background: #ffb000; border-radius: 3px; transform: rotate(-8deg); }
+.brand-mark i { background: #050505; }
+.desktop-nav { gap: 36px; font-size: 13px; text-transform: uppercase; letter-spacing: .055em; }
+.desktop-nav a::after { background: #ffb000; }
+.text-button { color: #fff; }
+.header-actions .button-dark { color: #111; background: #ffb000; }
+.menu-button span { background: #ffb000; }
+.mobile-nav { top: 118px; color: #fff; background: #050505; border-bottom: 2px solid #ffb000; }
+.mobile-nav a { border-bottom: 1px solid #2b2b2b; }
+
+.hero {
+  min-height: 720px;
+  padding-top: 74px;
+  background:
+    linear-gradient(90deg, transparent 0 67%, rgba(255,176,0,.07) 67% 67.15%, transparent 67.15%),
+    #f7f6f2;
+  border-bottom: 1px solid #ddd8cd;
+}
+.hero-copy { max-width: 680px; }
+.hero-copy h1 { font-size: clamp(62px, 6.7vw, 100px); letter-spacing: -.075em; }
+.hero-copy h1 em { color: #ff7a00; }
+.hero-copy > p { max-width: 570px; color: #3f3f3f; }
+.eyebrow { color: #111; letter-spacing: .16em; }
+.eyebrow i { width: 23px; height: 3px; background: #ffb000; border-radius: 0; }
+.button { border-radius: 0; text-transform: uppercase; letter-spacing: .035em; }
+.button-primary { color: #111; background: #ffb000; }
+.button-primary:hover { background: #ff8a00; }
+.hero-actions .button-primary { min-height: 58px; padding-inline: 28px; }
+.play-link span { color: #111; background: #ffb000; border-radius: 0; }
+.avatar-stack span { border-color: #f7f6f2; border-radius: 3px; }
+.avatar-stack span:first-child { background: #ff7a00; }
+.avatar-stack span:nth-child(2) { background: #111; }
+.avatar-stack span:nth-child(3) { color: #111; background: #ffcd61; }
+.avatar-stack span:last-child { color: #111; background: #ffb000; }
+
+.court-lines { border-color: rgba(0,0,0,.1); border-radius: 0; transform: rotate(8deg); }
+.court-lines::before, .court-lines::after { background: rgba(0,0,0,.1); }
+.mentor-poster {
+  background: #ffb000;
+  box-shadow: 18px 18px 0 #ff7a00, var(--shadow);
+  transform: rotate(0);
+}
+.person-art { background: #ff7a00; border-radius: 0; }
+.person-art::after { background: #181818; }
+.poster-info { background: #050505; border-top: 3px solid #ffb000; }
+.sport-label { color: #ffb000; }
+.round-button { color: #111; background: #ffb000; border-radius: 0; }
+.availability { background: #050505; }
+.verified-badge { color: #111; background: #ffb000; }
+.quote-card { border: 1px solid #111; box-shadow: 6px 6px 0 #ffb000; transform: none; }
+.floating-pill { border: 1px solid #111; box-shadow: 5px 5px 0 #ffb000; }
+
+.sports-strip { padding-block: 34px; color: #111; background: #fff; border-bottom: 5px solid #ffb000; }
+.sports-strip > p { color: #777; }
+.sport-list { gap: 18px; }
+.sport-list button {
+  min-height: 44px;
+  padding: 0 18px;
+  color: #111;
+  border: 1px solid #111;
+  background: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+  transition: .2s;
+}
+.sport-list button:hover { color: #111; background: #ffb000; }
+.sport-list span { color: #ff7a00; }
+
+.section { padding-top: 115px; padding-bottom: 115px; }
+.section-heading h2, .page-hero h1, .dashboard-welcome h1, .safety-hero h1, .apply-intro h1 {
+  letter-spacing: -.055em;
+}
+.section-heading h2 em, .page-hero h1 em, .dashboard-welcome h1 em,
+.safety-hero h1 em, .apply-intro h1 em { color: #ff7a00; }
+.how-section { background: #fff; }
+.steps-grid { gap: 0; border-top: 4px solid #ffb000; }
+.step-card { border-color: #d5d2ca; border-top: 0; }
+.step-card + .step-card { border-left: 0; }
+.step-card::after { display: none; }
+.step-icon { background: #ffb000; border-radius: 0; }
+.featured-step { color: #fff; background: #050505; transform: translateY(-18px); }
+.featured-step .step-icon { background: #ffb000; }
+
+.featured-section { background: #f4f3ee; border-top: 1px solid #d8d5cc; }
+.mentor-grid { gap: 24px; }
+.mentor-card { border: 0; box-shadow: 0 0 0 1px #d3d0c8; }
+.mentor-card:hover { transform: translateY(-6px); box-shadow: 10px 10px 0 #ffb000; }
+.mentor-art { min-height: 245px; }
+.mentor-art::before { border-radius: 0; transform: rotate(45deg); }
+.mentor-status { color: #111; background: #ffb000; }
+.mentor-card-body { padding: 23px; }
+.mentor-meta span:last-child { color: #b35a00; }
+.tag { color: #111; background: #f1eee6; border: 1px solid #ddd8cd; }
+.mentor-card-actions button { border-radius: 0; text-transform: uppercase; }
+.mentor-card-actions button:last-child { color: #111; background: #ffb000; border-color: #ffb000; }
+.button-outline { border: 2px solid #111; }
+
+.statement-section {
+  background:
+    linear-gradient(115deg, rgba(0,0,0,.94), rgba(0,0,0,.82)),
+    #050505;
+  border-block: 7px solid #ffb000;
+}
+.statement-kicker { color: #ffb000; }
+.statement-section blockquote em { color: #ffb000; }
+
+.compact-hero { color: #fff; background: #050505; border-bottom: 6px solid #ffb000; }
+.compact-hero .eyebrow { color: #ffb000; }
+.compact-hero > p { color: #c9c9c9; }
+.filters-panel { border: 1px solid #bdb9ae; box-shadow: 7px 7px 0 #ffb000; }
+.filter-header button { color: #b45400; }
+input, select, textarea { border-radius: 0; }
+input:focus, select:focus, textarea:focus { border-color: #ff8a00; box-shadow: 0 0 0 3px rgba(255,176,0,.22); }
+.safety-mini { background: #fff3d4; }
+.safety-mini > span { background: #ffb000; border-radius: 0; }
+.directory-top select { border: 1px solid #111; }
+
+.dashboard-sidebar { background: #050505; border-right: 5px solid #ffb000; }
+.dashboard-sidebar nav button.active { background: #ffb000; }
+.dashboard-help > span { background: #ffb000; border-radius: 0; }
+.stat-row { border-top: 5px solid #ffb000; }
+.empty-illustration { background: #ffb000; border-radius: 0; }
+.pending-chip { background: #ffdc8a; }
+
+.safety-hero { background: #050505; border-bottom: 6px solid #ffb000; }
+.shield-art { background: #ffb000; clip-path: polygon(50% 0,94% 17%,87% 73%,50% 100%,13% 73%,6% 17%); }
+.shield-art div { color: #ffb000; background: #050505; }
+.safety-grid { gap: 0; border-top: 4px solid #ffb000; }
+.safety-grid article + article { border-left: 0; }
+.safety-note { border-left: 7px solid #ff7a00; }
+.safety-note > div > span { background: #ff7a00; border-radius: 0; }
+
+.mentor-apply-layout { background: #f4f3ee; }
+.mentor-benefits span { background: #ffb000; border-radius: 0; }
+.application-card { border-top: 7px solid #ffb000; box-shadow: 14px 14px 0 #111; }
+.profile-header { border-bottom: 6px solid #ffb000; }
+.modal { border-top: 6px solid #ffb000; }
+.modal-close { border: 1px solid #111; border-radius: 0; }
+.selected-mentor { border-left: 5px solid #ffb000; }
+.toast > span { background: #ffb000; border-radius: 0; }
+
+footer { background: #050505; border-top: 6px solid #ffb000; }
+.light-brand .brand-mark { background: #ffb000; }
+
+@media (max-width: 900px) {
+  .hero { background: #f7f6f2; }
+  .featured-step { transform: none; }
+}
+
+@media (max-width: 640px) {
+  body { overflow-x: hidden; }
+  .prototype-bar { height: 30px; }
+  .site-header { width: 100vw; height: 70px; }
+  .header-actions { margin-left: auto; flex: 0 0 auto; }
+  .menu-button { display: block !important; position: absolute; top: 14px; right: 14px; z-index: 2; }
+  .mobile-nav { top: 100px; }
+  main, .page, .hero { max-width: 100vw; }
+  .hero { padding-top: 58px; grid-template-columns: minmax(0, 1fr); }
+  .hero-copy { min-width: 0; }
+  .hero-visual { width: 100%; min-width: 0; }
+  .hero-copy h1 { font-size: 51px; }
+  .hero-copy > p { max-width: 100%; }
+  .sport-list button { flex: 1 1 calc(50% - 10px); justify-content: center; }
+  .steps-grid { border-top-width: 3px; }
+  .application-card { box-shadow: 7px 7px 0 #111; }
+}
