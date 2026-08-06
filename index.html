@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="styles-extra.css">
   <link rel="stylesheet" href="styles-responsive.css">
   <link rel="stylesheet" href="sportside-theme.css">
+  <link rel="stylesheet" href="profile.css">
 </head>
 <body>
   <div class="prototype-bar">
@@ -32,7 +33,13 @@
       <a href="#mentor" data-route="mentor">Become a mentor</a>
     </nav>
     <div class="header-actions">
-      <button class="text-button" type="button" data-route="dashboard">My requests</button>
+      <details class="account-menu">
+        <summary>My Sportside <span aria-hidden="true">⌄</span></summary>
+        <div class="account-menu-list">
+          <button type="button" data-route="athlete-profile"><span>◉</span><span><strong>My profile</strong><small>Stats, activity & devices</small></span></button>
+          <button type="button" data-route="dashboard"><span>▦</span><span><strong>My requests</strong><small>Mentor introductions</small></span></button>
+        </div>
+      </details>
       <button class="button button-small button-dark" type="button" data-route="discover">Meet mentors <span>↗</span></button>
       <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
         <span></span><span></span>
@@ -45,6 +52,7 @@
     <a href="#home" data-route="home">How it works</a>
     <a href="#safety" data-route="safety">Safety</a>
     <a href="#mentor" data-route="mentor">Become a mentor</a>
+    <a href="#athlete-profile" data-route="athlete-profile">My profile</a>
     <a href="#dashboard" data-route="dashboard">My requests</a>
   </nav>
 
@@ -234,6 +242,7 @@
             <h2>My Sportside</h2>
           </div>
           <nav>
+            <button type="button" data-route="athlete-profile"><span>◉</span> My profile</button>
             <button class="active" type="button"><span>▦</span> Requests</button>
             <button type="button" data-coming-soon><span>○</span> Sessions <i>Soon</i></button>
             <button type="button" data-coming-soon><span>☆</span> Saved mentors <i>Soon</i></button>
@@ -260,6 +269,131 @@
               <button class="button button-dark" type="button" data-route="discover">Browse mentors</button>
             </div>
           </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="page athlete-profile-page" id="athlete-profile-page" data-page="athlete-profile">
+      <div class="athlete-profile-heading">
+        <div>
+          <span class="eyebrow"><i></i> My athlete profile</span>
+          <h1>Track the person<br><em>behind the player.</em></h1>
+        </div>
+        <div class="profile-heading-note">
+          <span>Prototype profile</span>
+          <p>Your changes and device connections are not saved yet.</p>
+        </div>
+      </div>
+
+      <div class="athlete-profile-layout">
+        <aside class="athlete-card" aria-label="Athlete profile summary">
+          <div class="athlete-card-top">
+            <span class="profile-visibility" id="profile-visibility"><i></i> Private</span>
+            <button class="privacy-toggle" id="privacy-toggle" type="button" aria-pressed="false">Make public</button>
+          </div>
+          <div class="athlete-avatar" aria-label="Profile picture placeholder">
+            <span class="avatar-head"></span>
+            <span class="avatar-body"></span>
+            <button type="button" data-profile-action aria-label="Add profile picture">＋</button>
+          </div>
+          <div class="athlete-identity">
+            <h2>Your Name</h2>
+            <p>Add a short athlete bio</p>
+            <button type="button" data-profile-action>Edit profile</button>
+          </div>
+          <div class="athlete-facts">
+            <div><span>Age</span><strong>—</strong><small>Add age</small></div>
+            <div><span>Level</span><strong>01</strong><small>Rookie</small></div>
+            <div><span>Height</span><strong>—</strong><small>Add height</small></div>
+            <div><span>Team</span><strong>—</strong><small>Add team</small></div>
+            <div><span>Weight</span><strong>—</strong><small>Add weight</small></div>
+            <div><span>Sport</span><strong>—</strong><small>Add sport</small></div>
+          </div>
+          <div class="profile-completion">
+            <div><span>Profile completion</span><strong>20%</strong></div>
+            <div class="completion-track"><i></i></div>
+            <p>Add your sport, age, height and weight to complete your athlete profile.</p>
+          </div>
+        </aside>
+
+        <div class="athlete-insights">
+          <section class="insight-card growth-card">
+            <div class="insight-heading">
+              <div>
+                <span class="card-kicker">Growth history</span>
+                <h2>Your progress over time</h2>
+                <p>Switch between age, height and weight to preview each history chart.</p>
+              </div>
+              <span class="demo-chip">Preview data</span>
+            </div>
+            <div class="chart-tabs" role="tablist" aria-label="Growth chart metric">
+              <button class="active" type="button" data-growth-metric="height" role="tab" aria-selected="true">Height</button>
+              <button type="button" data-growth-metric="weight" role="tab" aria-selected="false">Weight</button>
+              <button type="button" data-growth-metric="age" role="tab" aria-selected="false">Age</button>
+            </div>
+            <div class="chart-summary">
+              <div><span id="growth-label">Current height</span><strong id="growth-value">5 ft 9 in</strong></div>
+              <p id="growth-change">↑ 7 in across this preview</p>
+            </div>
+            <div class="growth-chart">
+              <svg viewBox="0 0 620 230" role="img" aria-labelledby="growth-chart-title growth-chart-desc">
+                <title id="growth-chart-title">Height history preview</title>
+                <desc id="growth-chart-desc">A sample line chart demonstrating how athlete growth history will appear.</desc>
+                <g class="chart-grid" aria-hidden="true">
+                  <line x1="48" y1="35" x2="590" y2="35"></line>
+                  <line x1="48" y1="82" x2="590" y2="82"></line>
+                  <line x1="48" y1="129" x2="590" y2="129"></line>
+                  <line x1="48" y1="176" x2="590" y2="176"></line>
+                </g>
+                <polyline id="growth-line" points="" fill="none"></polyline>
+                <g id="growth-points"></g>
+                <g class="chart-years" aria-hidden="true">
+                  <text x="48" y="215">2022</text><text x="183" y="215">2023</text><text x="319" y="215">2024</text><text x="454" y="215">2025</text><text x="590" y="215" text-anchor="end">2026</text>
+                </g>
+              </svg>
+            </div>
+            <p class="chart-disclaimer">Preview values only. Real history will appear after athlete details are saved to a future database.</p>
+          </section>
+
+          <div class="profile-panels">
+            <section class="insight-card watch-card">
+              <div class="insight-heading">
+                <div><span class="card-kicker">Smartwatch</span><h2>Connect your movement</h2></div>
+                <span class="connection-status" id="watch-status"><i></i> Not connected</span>
+              </div>
+              <div class="watch-visual" aria-hidden="true"><div><span>♡</span><strong id="watch-face">--</strong><small>SYNC</small></div></div>
+              <p>Bring steps, active minutes, heart rate and sleep into one athlete view.</p>
+              <div class="watch-metrics">
+                <div><span>Steps</span><strong id="watch-steps">—</strong></div>
+                <div><span>Active min</span><strong id="watch-minutes">—</strong></div>
+                <div><span>Resting HR</span><strong id="watch-heart">—</strong></div>
+                <div><span>Sleep</span><strong id="watch-sleep">—</strong></div>
+              </div>
+              <button class="button button-dark full-button" id="watch-connect" type="button" data-watch-connect>Connect smartwatch <span>＋</span></button>
+              <small>No real health data is accessed in this prototype.</small>
+            </section>
+
+            <section class="insight-card level-card">
+              <div class="insight-heading">
+                <div><span class="card-kicker">Activity level</span><h2>Every move adds up</h2></div>
+                <span class="demo-chip">Sample week</span>
+              </div>
+              <div class="level-progress">
+                <div class="level-ring"><span>Level</span><strong>12</strong></div>
+                <div>
+                  <strong>350 / 500 XP</strong>
+                  <div class="xp-track"><i></i></div>
+                  <p>150 XP until Level 13</p>
+                </div>
+              </div>
+              <div class="activity-list">
+                <div><span class="activity-icon">⚽</span><p><strong>Soccer practice</strong><small>75 active minutes</small></p><b>+85 XP</b></div>
+                <div><span class="activity-icon">◇</span><p><strong>Strength session</strong><small>35 active minutes</small></p><b>+40 XP</b></div>
+                <div><span class="activity-icon">↗</span><p><strong>Outdoor run</strong><small>2.4 miles</small></p><b>+25 XP</b></div>
+              </div>
+              <button class="activity-link" type="button" data-profile-action>View all activity <span>→</span></button>
+            </section>
+          </div>
         </div>
       </div>
     </section>
@@ -326,6 +460,7 @@
     <p>Helping young athletes find guidance that moves them forward.</p>
     <div>
       <button type="button" data-route="discover">Find a mentor</button>
+      <button type="button" data-route="athlete-profile">My profile</button>
       <button type="button" data-route="safety">Safety</button>
       <button type="button" data-route="mentor">Become a mentor</button>
     </div>
