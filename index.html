@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rally connects young athletes with trusted sports mentors.">
+  <title>Rally — Find your next move</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-extra.css">
+  <link rel="stylesheet" href="styles-responsive.css">
+</head>
+<body>
+  <div class="prototype-bar">
+    <span>Prototype mode</span>
+    <p>No accounts or submissions are saved yet.</p>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" data-route="home" aria-label="Rally home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
+      <span>rally</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#discover" data-route="discover">Find a mentor</a>
+      <a href="#how-it-works" data-scroll="how-it-works">How it works</a>
+      <a href="#safety" data-route="safety">Safety</a>
+      <a href="#mentor" data-route="mentor">Become a mentor</a>
+    </nav>
+    <div class="header-actions">
+      <button class="text-button" type="button" data-route="dashboard">My requests</button>
+      <button class="button button-small button-dark" type="button" data-route="discover">Meet mentors <span>↗</span></button>
+      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <a href="#discover" data-route="discover">Find a mentor</a>
+    <a href="#home" data-route="home">How it works</a>
+    <a href="#safety" data-route="safety">Safety</a>
+    <a href="#mentor" data-route="mentor">Become a mentor</a>
+    <a href="#dashboard" data-route="dashboard">My requests</a>
+  </nav>
+
+  <main>
+    <section class="page active" id="home-page" data-page="home">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow"><i></i> Your goals deserve a game plan</span>
+          <h1>Big dreams.<br><em>Real guidance.</em></h1>
+          <p>Meet trusted sports mentors who have been where you are—and want to help you find your next move.</p>
+          <div class="hero-actions">
+            <button class="button button-primary" type="button" data-route="discover">Find your mentor <span>→</span></button>
+            <button class="play-link" type="button" data-scroll="how-it-works"><span>▶</span> See how Rally works</button>
+          </div>
+          <div class="trust-line">
+            <div class="avatar-stack" aria-hidden="true">
+              <span>AJ</span><span>MR</span><span>KT</span><span>+</span>
+            </div>
+            <p><strong>Built around safety</strong><br>Every mentor is reviewed before joining.</p>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Featured mentor preview">
+          <div class="court-lines" aria-hidden="true"></div>
+          <div class="mentor-poster">
+            <div class="poster-top">
+              <span class="availability"><i></i> Available this month</span>
+              <span class="verified-badge">✓ Verified</span>
+            </div>
+            <div class="poster-person">
+              <div class="person-art">
+                <span class="jersey-number">24</span>
+                <span class="person-initials">MJ</span>
+              </div>
+              <div class="quote-card">“Confidence is a skill.<br>We can train it.”</div>
+            </div>
+            <div class="poster-info">
+              <div>
+                <span class="sport-label">BASKETBALL · COLLEGE ATHLETE</span>
+                <h2>Maya Johnson</h2>
+                <p>Confidence, recruiting & balancing school</p>
+              </div>
+              <button type="button" class="round-button" data-mentor-id="maya-johnson" aria-label="View Maya's profile">↗</button>
+            </div>
+          </div>
+          <div class="floating-pill pill-top">1:1 guidance</div>
+          <div class="floating-pill pill-bottom">Your next play starts here <span>✦</span></div>
+        </div>
+      </div>
+
+      <section class="sports-strip" aria-label="Sports available">
+        <p>Whatever your sport, there’s someone in your corner.</p>
+        <div class="sport-list">
+          <button data-sport-jump="Basketball"><span>◉</span> Basketball</button>
+          <button data-sport-jump="Soccer"><span>⬡</span> Soccer</button>
+          <button data-sport-jump="Track & Field"><span>≈</span> Track</button>
+          <button data-sport-jump="Tennis"><span>●</span> Tennis</button>
+          <button data-sport-jump="Volleyball"><span>✣</span> Volleyball</button>
+          <button data-sport-jump="Swimming"><span>≋</span> Swimming</button>
+        </div>
+      </section>
+
+      <section class="section how-section" id="how-it-works">
+        <div class="section-heading split-heading">
+          <div>
+            <span class="eyebrow">How it works</span>
+            <h2>A clear path to the<br><em>right support.</em></h2>
+          </div>
+          <p>Finding guidance should feel simple. Rally helps you connect safely, set a goal, and start moving forward.</p>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-number">01</span>
+            <div class="step-icon">⌕</div>
+            <h3>Explore your options</h3>
+            <p>Filter mentors by sport, experience, and the kind of support you want.</p>
+          </article>
+          <article class="step-card featured-step">
+            <span class="step-number">02</span>
+            <div class="step-icon">◇</div>
+            <h3>Request an introduction</h3>
+            <p>Tell us about your goals. For younger athletes, a guardian stays involved.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">03</span>
+            <div class="step-icon">↗</div>
+            <h3>Build your game plan</h3>
+            <p>Meet in a safe setting and turn honest guidance into practical next steps.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section featured-section">
+        <div class="section-heading">
+          <span class="eyebrow">Meet the team behind your goals</span>
+          <h2>Mentors who remember<br><em>what starting felt like.</em></h2>
+        </div>
+        <div class="mentor-grid" id="featured-mentors"></div>
+        <button class="button button-outline centered-button" type="button" data-route="discover">Explore all mentors <span>→</span></button>
+      </section>
+
+      <section class="statement-section">
+        <span class="statement-kicker">More than the scoreboard</span>
+        <blockquote>“The right person at the right moment can change <em>your whole direction.</em>”</blockquote>
+        <button class="button button-primary" type="button" data-route="discover">Start your search <span>→</span></button>
+      </section>
+    </section>
+
+    <section class="page" id="discover-page" data-page="discover">
+      <div class="page-hero compact-hero">
+        <span class="eyebrow"><i></i> Your next conversation matters</span>
+        <h1>Find someone who<br><em>gets your game.</em></h1>
+        <p>Explore mentors by sport, experience, and the goals you want to work toward.</p>
+      </div>
+      <div class="directory-layout">
+        <aside class="filters-panel">
+          <div class="filter-header">
+            <h2>Filters</h2>
+            <button id="clear-filters" type="button">Clear all</button>
+          </div>
+          <label class="search-field">
+            <span>Search</span>
+            <div><i>⌕</i><input id="mentor-search" type="search" placeholder="Name, sport or goal"></div>
+          </label>
+          <label>
+            <span>Sport</span>
+            <select id="sport-filter">
+              <option value="">All sports</option>
+              <option>Basketball</option><option>Soccer</option><option>Track & Field</option>
+              <option>Tennis</option><option>Volleyball</option><option>Swimming</option>
+            </select>
+          </label>
+          <label>
+            <span>Support with</span>
+            <select id="focus-filter">
+              <option value="">Any goal</option>
+              <option>Confidence</option><option>Recruiting</option><option>School balance</option>
+              <option>Training</option><option>Leadership</option><option>College transition</option>
+            </select>
+          </label>
+          <fieldset>
+            <legend>Meeting format</legend>
+            <label class="check-row"><input type="checkbox" value="Virtual" name="format"><span>Virtual</span></label>
+            <label class="check-row"><input type="checkbox" value="In person" name="format"><span>In person</span></label>
+          </fieldset>
+          <div class="safety-mini">
+            <span>◈</span>
+            <div><strong>Safety comes first</strong><p>Mentors are reviewed before their profiles go live.</p></div>
+          </div>
+        </aside>
+        <div class="directory-content">
+          <div class="directory-top">
+            <p><strong id="mentor-count">0 mentors</strong> ready to help</p>
+            <select id="sort-filter" aria-label="Sort mentors">
+              <option value="recommended">Recommended</option>
+              <option value="name">Name A–Z</option>
+              <option value="sport">Sport</option>
+            </select>
+          </div>
+          <div class="mentor-grid directory-grid" id="mentor-directory"></div>
+          <div class="empty-state" id="mentor-empty">
+            <span>⌕</span><h3>No exact matches yet</h3><p>Try clearing a filter or searching another goal.</p>
+            <button class="button button-dark" type="button" id="empty-clear">Clear filters</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="dashboard-page" data-page="dashboard">
+      <div class="dashboard-shell">
+        <aside class="dashboard-sidebar">
+          <div>
+            <span class="tiny-label">Athlete space</span>
+            <h2>My Rally</h2>
+          </div>
+          <nav>
+            <button class="active" type="button"><span>▦</span> Requests</button>
+            <button type="button" data-coming-soon><span>○</span> Sessions <i>Soon</i></button>
+            <button type="button" data-coming-soon><span>☆</span> Saved mentors <i>Soon</i></button>
+          </nav>
+          <button class="dashboard-help" type="button" data-route="safety"><span>?</span><div><strong>Need help?</strong><small>Visit the safety center</small></div></button>
+        </aside>
+        <div class="dashboard-main">
+          <div class="dashboard-welcome">
+            <div><span class="eyebrow">My requests</span><h1>Your next steps,<br><em>all in one place.</em></h1></div>
+            <button class="button button-primary" type="button" data-route="discover">Find a mentor <span>＋</span></button>
+          </div>
+          <div class="stat-row">
+            <div><span id="pending-count">0</span><p>Pending requests</p></div>
+            <div><span>0</span><p>Active mentors</p></div>
+            <div><span>0</span><p>Upcoming sessions</p></div>
+          </div>
+          <section class="request-panel">
+            <div class="panel-heading"><h2>Mentorship requests</h2><span>Session only — not saved</span></div>
+            <div id="request-list"></div>
+            <div class="dashboard-empty" id="dashboard-empty">
+              <div class="empty-illustration"><span>↗</span></div>
+              <h3>Your first move starts here</h3>
+              <p>When you request an introduction, you’ll be able to track it here during this browser session.</p>
+              <button class="button button-dark" type="button" data-route="discover">Browse mentors</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="safety-page" data-page="safety">
+      <div class="safety-hero">
+        <div>
+          <span class="eyebrow"><i></i> Built for trust</span>
+          <h1>Safe support is<br><em>better support.</em></h1>
+          <p>Rally is designed to keep athletes, families, and mentors informed and protected at every step.</p>
+          <button class="button button-primary" type="button" data-report-open>Report a concern <span>→</span></button>
+        </div>
+        <div class="shield-art"><div>✓</div><span>Safety<br>first</span></div>
+      </div>
+      <section class="section safety-content">
+        <div class="section-heading"><span class="eyebrow">Our approach</span><h2>Protection isn’t a feature.<br><em>It’s the foundation.</em></h2></div>
+        <div class="safety-grid">
+          <article><span>01</span><h3>Mentor review</h3><p>Every mentor profile stays private until identity, experience, and references have been reviewed.</p></article>
+          <article><span>02</span><h3>Guardian involvement</h3><p>For younger athletes, guardians are included in introductions, permissions, and session planning.</p></article>
+          <article><span>03</span><h3>No open direct messages</h3><p>Introductions follow a structured request flow instead of unrestricted private messaging.</p></article>
+          <article><span>04</span><h3>Clear reporting</h3><p>Athletes and families can flag concerns quickly. Reports are designed for prompt human review.</p></article>
+        </div>
+        <div class="safety-note">
+          <div><span>!</span><p><strong>Prototype notice</strong><br>Real verification, moderation, consent records, and emergency workflows require a secure backend and trained operators before launch.</p></div>
+          <button type="button" data-report-open>Open report form</button>
+        </div>
+      </section>
+    </section>
+
+    <section class="page" id="mentor-page" data-page="mentor">
+      <div class="mentor-apply-layout">
+        <div class="apply-intro">
+          <span class="eyebrow"><i></i> Pass your experience forward</span>
+          <h1>Be the mentor<br><em>you once needed.</em></h1>
+          <p>Your story, lessons, and honest advice can help a young athlete see possibilities they couldn’t see alone.</p>
+          <div class="mentor-benefits">
+            <div><span>✓</span><p><strong>Choose your commitment</strong><br>Share when and how you’re available.</p></div>
+            <div><span>✓</span><p><strong>Get clear support</strong><br>Guidelines and session resources keep mentoring focused.</p></div>
+            <div><span>✓</span><p><strong>Make a real difference</strong><br>Help athletes grow beyond wins and losses.</p></div>
+          </div>
+        </div>
+        <form class="application-card" id="mentor-application">
+          <div class="form-title"><span>Step 1 of 1</span><h2>Tell us about yourself</h2><p>This demo form isn’t connected to a database yet.</p></div>
+          <div class="field-grid">
+            <label><span>First name</span><input required name="firstName" placeholder="Jordan"></label>
+            <label><span>Last name</span><input required name="lastName" placeholder="Lee"></label>
+          </div>
+          <label><span>Email address</span><input required type="email" name="email" placeholder="jordan@example.com"></label>
+          <div class="field-grid">
+            <label><span>Primary sport</span><select required name="sport"><option value="">Choose a sport</option><option>Basketball</option><option>Soccer</option><option>Track & Field</option><option>Tennis</option><option>Volleyball</option><option>Swimming</option><option>Other</option></select></label>
+            <label><span>Experience level</span><select required name="experience"><option value="">Select one</option><option>College athlete</option><option>Professional athlete</option><option>Coach</option><option>Sports professional</option></select></label>
+          </div>
+          <label><span>What would you help athletes with?</span><textarea required name="bio" rows="4" placeholder="Share a few topics, experiences, or lessons you could offer..."></textarea></label>
+          <label class="consent-row"><input required type="checkbox"><span>I understand that mentor verification and safeguarding review are required before a profile can be published.</span></label>
+          <button class="button button-primary full-button" type="submit">Submit interest <span>→</span></button>
+          <small class="privacy-copy">Prototype only. This information will not be stored or sent.</small>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand light-brand" href="#home" data-route="home"><span class="brand-mark"><i></i><i></i></span><span>rally</span></a>
+    <p>Helping young athletes find guidance that moves them forward.</p>
+    <div>
+      <button type="button" data-route="discover">Find a mentor</button>
+      <button type="button" data-route="safety">Safety</button>
+      <button type="button" data-route="mentor">Become a mentor</button>
+    </div>
+    <small>© 2026 Rally prototype. Sample profiles only.</small>
+  </footer>
+
+  <div class="modal-backdrop" id="profile-modal" aria-hidden="true">
+    <div class="modal profile-modal" role="dialog" aria-modal="true" aria-labelledby="profile-name">
+      <button class="modal-close" type="button" data-modal-close aria-label="Close">×</button>
+      <div id="profile-content"></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="request-modal" aria-hidden="true">
+    <div class="modal form-modal" role="dialog" aria-modal="true" aria-labelledby="request-title">
+      <button class="modal-close" type="button" data-modal-close aria-label="Close">×</button>
+      <span class="eyebrow">Request an introduction</span>
+      <h2 id="request-title">Tell us what support would help</h2>
+      <p class="modal-intro">This prototype keeps your request only until you refresh the page.</p>
+      <form id="mentorship-request">
+        <input type="hidden" name="mentorId" id="request-mentor-id">
+        <div class="selected-mentor" id="selected-mentor"></div>
+        <div class="field-grid">
+          <label><span>Your first name</span><input required name="athleteName" placeholder="First name"></label>
+          <label><span>Age range</span><select required name="age"><option value="">Choose one</option><option>13–15</option><option>16–17</option><option>18+</option></select></label>
+        </div>
+        <label><span>What would you like help with?</span><select required name="goal"><option value="">Choose a goal</option><option>Confidence</option><option>Recruiting</option><option>School balance</option><option>Training</option><option>Leadership</option><option>College transition</option></select></label>
+        <label><span>A little about your goal</span><textarea required name="message" rows="3" placeholder="What are you working toward?"></textarea></label>
+        <label><span>Guardian email <small>(required if under 18)</small></span><input type="email" name="guardianEmail" placeholder="guardian@example.com"></label>
+        <label class="consent-row"><input required type="checkbox" name="safe"><span>I agree to Rally’s safety guidelines and understand that this is a prototype request.</span></label>
+        <button class="button button-primary full-button" type="submit">Send request <span>→</span></button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="report-modal" aria-hidden="true">
+    <div class="modal form-modal small-modal" role="dialog" aria-modal="true" aria-labelledby="report-title">
+      <button class="modal-close" type="button" data-modal-close aria-label="Close">×</button>
+      <span class="eyebrow">Safety report</span>
+      <h2 id="report-title">Tell us what happened</h2>
+      <p class="modal-intro">Demo only. This report is not sent. In an emergency, contact local emergency services.</p>
+      <form id="report-form">
+        <label><span>Type of concern</span><select required><option value="">Select one</option><option>Inappropriate behavior</option><option>Profile concern</option><option>Privacy issue</option><option>Other</option></select></label>
+        <label><span>What should the safety team know?</span><textarea required rows="4" placeholder="Share the important details..."></textarea></label>
+        <label><span>Your email</span><input required type="email" placeholder="you@example.com"></label>
+        <button class="button button-dark full-button" type="submit">Submit demo report</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span>✓</span><div><strong id="toast-title">Done</strong><p id="toast-message">Your action was completed.</p></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
