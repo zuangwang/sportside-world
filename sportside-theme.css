@@ -142,6 +142,61 @@ body { background: #fff; }
 .mentor-card-actions button:last-child { color: #111; background: #ffb000; border-color: #ffb000; }
 .button-outline { border: 2px solid #111; }
 
+.carousel-nav {
+  margin: -18px 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.carousel-nav > span {
+  color: #696969;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+.carousel-nav > div { display: flex; gap: 8px; }
+.carousel-nav button {
+  width: 46px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  color: #111;
+  background: #fff;
+  border: 1px solid #111;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.carousel-nav button:hover { background: #ffb000; transform: translateY(-2px); }
+.compact-carousel-nav { margin: 0 0 14px; }
+.directory-content { min-width: 0; }
+.swipe-carousel {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  gap: 24px;
+  padding: 2px 2px 24px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #ffb000 #e2ded4;
+  -webkit-overflow-scrolling: touch;
+}
+.swipe-carousel::-webkit-scrollbar { height: 5px; }
+.swipe-carousel::-webkit-scrollbar-track { background: #e2ded4; }
+.swipe-carousel::-webkit-scrollbar-thumb { background: #ffb000; }
+.swipe-carousel .mentor-card {
+  flex: 0 0 calc((100% - 48px) / 3);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+.directory-grid.swipe-carousel { grid-template-columns: none; }
+.directory-grid.swipe-carousel .mentor-card { flex-basis: calc((100% - 48px) / 3); }
+
 .statement-section {
   background:
     linear-gradient(115deg, rgba(0,0,0,.94), rgba(0,0,0,.82)),
@@ -192,6 +247,8 @@ footer { background: #050505; border-top: 6px solid #ffb000; }
 @media (max-width: 900px) {
   .hero { background: #f7f6f2; }
   .featured-step { transform: none; }
+  .swipe-carousel .mentor-card,
+  .directory-grid.swipe-carousel .mentor-card { flex-basis: calc((100% - 24px) / 2); }
 }
 
 @media (max-width: 640px) {
@@ -209,6 +266,20 @@ footer { background: #050505; border-top: 6px solid #ffb000; }
   .hero-copy h1 { font-size: 51px; }
   .hero-copy > p { max-width: 100%; }
   .sport-list button { flex: 1 1 calc(50% - 10px); justify-content: center; }
+  .carousel-nav { margin-top: -8px; }
+  .carousel-nav > span { font-size: 9px; }
+  .carousel-nav button { width: 42px; height: 40px; }
+  .swipe-carousel {
+    width: calc(100vw - 40px);
+    gap: 14px;
+    margin-right: -20px;
+    padding-right: 28px;
+    scrollbar-width: none;
+  }
+  .swipe-carousel::-webkit-scrollbar { display: none; }
+  .swipe-carousel .mentor-card,
+  .directory-grid.swipe-carousel .mentor-card { flex-basis: 84vw; }
+  .directory-grid.swipe-carousel { width: calc(100vw - 32px); margin-right: -16px; }
   .steps-grid { border-top-width: 3px; }
   .application-card { box-shadow: 7px 7px 0 #111; }
 }

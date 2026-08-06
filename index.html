@@ -141,7 +141,14 @@
           <span class="eyebrow">Meet the team behind your goals</span>
           <h2>Mentors who remember<br><em>what starting felt like.</em></h2>
         </div>
-        <div class="mentor-grid" id="featured-mentors"></div>
+        <div class="carousel-nav" aria-label="Featured mentor carousel controls">
+          <span>Swipe to meet the mentors</span>
+          <div>
+            <button type="button" data-carousel-target="featured-mentors" data-carousel-direction="-1" aria-label="Previous mentors">←</button>
+            <button type="button" data-carousel-target="featured-mentors" data-carousel-direction="1" aria-label="Next mentors">→</button>
+          </div>
+        </div>
+        <div class="mentor-grid swipe-carousel" id="featured-mentors"></div>
         <button class="button button-outline centered-button" type="button" data-route="discover">Explore all mentors <span>→</span></button>
       </section>
 
@@ -203,7 +210,14 @@
               <option value="sport">Sport</option>
             </select>
           </div>
-          <div class="mentor-grid directory-grid" id="mentor-directory"></div>
+          <div class="carousel-nav compact-carousel-nav" aria-label="Mentor directory carousel controls">
+            <span>Swipe through your matches</span>
+            <div>
+              <button type="button" data-carousel-target="mentor-directory" data-carousel-direction="-1" aria-label="Previous mentor matches">←</button>
+              <button type="button" data-carousel-target="mentor-directory" data-carousel-direction="1" aria-label="Next mentor matches">→</button>
+            </div>
+          </div>
+          <div class="mentor-grid directory-grid swipe-carousel" id="mentor-directory"></div>
           <div class="empty-state" id="mentor-empty">
             <span>⌕</span><h3>No exact matches yet</h3><p>Try clearing a filter or searching another goal.</p>
             <button class="button button-dark" type="button" id="empty-clear">Clear filters</button>
