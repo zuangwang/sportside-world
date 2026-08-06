@@ -14,6 +14,25 @@
 
 body { background: #fff; }
 .page.active { animation: none; }
+.sr-only {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.sportside-wordmark { display: inline-flex; align-items: center; gap: .02em; }
+.word-ball {
+  display: inline-block;
+  margin-inline: .02em;
+  font-size: .9em;
+  line-height: 1;
+  transform: translateY(-.02em);
+}
 .prototype-bar { height: 34px; color: #111; background: #ffb000; }
 .prototype-bar span { color: #fff; background: #111; }
 .prototype-bar p { color: #111; opacity: 1; }
