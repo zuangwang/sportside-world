@@ -1,6 +1,6 @@
-# Sportside World
+# Sportside
 
-Sportside World is a database-free front-end prototype for connecting young athletes
+Sportside is a database-free front-end prototype for connecting young athletes
 with trusted sports mentors.
 
 ## Included
