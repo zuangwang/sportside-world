@@ -232,6 +232,73 @@
 .premium-feature-grid h3 { margin-bottom: 8px; font-size: 18px; }
 .premium-feature-grid p { color: #666; font-size: 11px; }
 .premium-feature-grid article > b { position: absolute; right: 18px; top: 18px; color: #a45100; font-size: 7px; letter-spacing: .1em; text-transform: uppercase; }
+.premium-pricing { padding: 100px max(7vw, 30px); background: #fff; }
+.pricing-heading {
+  margin-bottom: 48px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 60px;
+}
+.pricing-heading h2 { margin: 14px 0 0; font-size: clamp(43px, 5vw, 70px); line-height: 1; letter-spacing: -.06em; }
+.pricing-heading h2 em { color: #ff7a00; font-family: Georgia, serif; font-weight: 400; }
+.pricing-heading > p { max-width: 430px; margin: 0; color: #666; font-size: 14px; }
+.pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+.pricing-card {
+  padding: 30px;
+  position: relative;
+  background: #f4f2ec;
+  border: 1px solid #111;
+  box-shadow: 8px 8px 0 #ffb000;
+}
+.recruiter-pricing-card {
+  color: #fff;
+  background: #111;
+  box-shadow: 8px 8px 0 #ff7a00;
+}
+.plan-topline { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+.plan-topline > span { font-size: 10px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.plan-topline > b { padding: 6px 8px; color: #111; background: #ffb000; font-size: 7px; letter-spacing: .06em; text-transform: uppercase; }
+.pricing-card > h3 { max-width: 470px; margin: 27px 0 22px; font-size: clamp(25px, 2.6vw, 37px); line-height: 1.05; letter-spacing: -.04em; }
+.plan-prices { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #c8c4b9; }
+.recruiter-pricing-card .plan-prices { border-color: #454545; }
+.plan-prices > div { min-height: 145px; padding: 18px; position: relative; }
+.plan-prices > div + div { border-left: 1px solid #c8c4b9; }
+.recruiter-pricing-card .plan-prices > div + div { border-color: #454545; }
+.plan-prices span, .plan-prices strong, .plan-prices small, .plan-prices b { display: block; }
+.plan-prices span { color: #777; font-size: 8px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.recruiter-pricing-card .plan-prices span, .recruiter-pricing-card .plan-prices small { color: #aaa; }
+.plan-prices strong { margin: 5px 0 0; font: 800 clamp(35px, 4vw, 55px)/1 var(--display); letter-spacing: -.06em; }
+.plan-prices small { color: #666; font-size: 8px; }
+.plan-prices b { margin-top: 10px; color: #9e4c00; font-size: 8px; text-transform: uppercase; }
+.recruiter-pricing-card .plan-prices b { color: #ffb000; }
+.annual-price { background: #fff; }
+.recruiter-pricing-card .annual-price { background: #242424; }
+.pricing-card ul { min-height: 158px; margin: 25px 0; padding: 0; list-style: none; }
+.pricing-card li { padding: 8px 0 8px 24px; position: relative; border-bottom: 1px solid #d7d3c9; font-size: 11px; }
+.recruiter-pricing-card li { border-color: #3c3c3c; }
+.pricing-card li::before { content: "✓"; position: absolute; left: 2px; color: #b35400; font-weight: 900; }
+.recruiter-pricing-card li::before { color: #ffb000; }
+.recruiter-access-note {
+  margin-top: 30px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #fff2d0;
+  border-left: 6px solid #ff7a00;
+}
+.recruiter-access-note > span {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  color: #111;
+  background: #ffb000;
+  font-weight: 900;
+}
+.recruiter-access-note p { margin: 0; color: #555; font-size: 11px; }
 .plan-compare {
   padding: 100px max(9vw, 35px);
   display: grid;
@@ -267,6 +334,8 @@
   .premium-pass { margin-top: 25px; }
   .premium-feature-grid { grid-template-columns: 1fr; }
   .premium-feature-grid article, .premium-feature-grid article:nth-child(3n) { border-right: 0; }
+  .pricing-heading { align-items: start; flex-direction: column; gap: 20px; }
+  .pricing-grid { grid-template-columns: 1fr; }
   .plan-compare { padding: 70px 20px; grid-template-columns: 1fr; }
 }
 @media (max-width: 520px) {
@@ -278,5 +347,15 @@
   .premium-hero-actions { align-items: stretch; flex-direction: column; }
   .member-page-hero h1 { font-size: 49px; }
   .premium-pass { min-height: 265px; padding: 22px; }
+  .premium-pricing { padding: 70px 16px; }
+  .pricing-card { padding: 22px 16px; box-shadow: 5px 5px 0 #ffb000; }
+  .recruiter-pricing-card { box-shadow: 5px 5px 0 #ff7a00; }
+  .plan-topline { align-items: start; flex-direction: column; }
+  .plan-prices { grid-template-columns: 1fr; }
+  .plan-prices > div { min-height: 125px; }
+  .plan-prices > div + div { border-left: 0; border-top: 1px solid #c8c4b9; }
+  .recruiter-pricing-card .plan-prices > div + div { border-color: #454545; }
+  .pricing-card ul { min-height: 0; }
+  .recruiter-access-note { align-items: start; }
   .compare-row { padding-inline: 11px; grid-template-columns: 1fr 58px 77px; }
 }

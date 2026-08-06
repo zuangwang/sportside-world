@@ -84,6 +84,8 @@ document.addEventListener("click",e=>{
   if(profileScroll){goToPage("athlete-profile");setTimeout(()=>document.querySelector("#"+profileScroll.dataset.profileScroll)?.scrollIntoView({behavior:"smooth",block:"start"}),120);return}
   const premiumScroll=e.target.closest("[data-scroll-premium]");
   if(premiumScroll){document.querySelector("#"+premiumScroll.dataset.scrollPremium)?.scrollIntoView({behavior:"smooth"});return}
+  const premiumPlan=e.target.closest("[data-premium-plan]");
+  if(premiumPlan){const recruiter=premiumPlan.dataset.premiumPlan==="Recruiter Premium";showToast(premiumPlan.dataset.premiumPlan+" selected",recruiter?"$33 monthly or $330 annually. Checkout is not active yet.":"$9.99 monthly or $99 annually. Checkout is not active yet.");return}
   if(e.target.closest("[data-premium-action]")){showToast("Premium waitlist preview","No payment or signup was submitted in this prototype.");return}
   const remove=e.target.closest("[data-reel-delete]");
   if(remove){const index=state.reels.findIndex(reel=>reel.id===remove.dataset.reelDelete);if(index>-1){URL.revokeObjectURL(state.reels[index].url);state.reels.splice(index,1);renderReels();showToast("Reel removed","The local video preview was removed.");}}
