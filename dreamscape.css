@@ -1,0 +1,1617 @@
+/*
+  Sportside Dreamscape
+  Final visual layer: monochrome interface, full-color photography.
+*/
+
+:root {
+  --ink: #0a0a0a;
+  --ink-soft: #4f4f4f;
+  --soft: #666666;
+  --cream: #efefef;
+  --paper: #fafafa;
+  --lime: #111111;
+  --lime-dark: #000000;
+  --orange: #303030;
+  --mint: #dddddd;
+  --line: rgba(10, 10, 10, 0.14);
+  --white: #ffffff;
+  --mist: rgba(255, 255, 255, 0.72);
+  --shadow: 0 28px 80px rgba(0, 0, 0, 0.11);
+  --shadow-soft: 0 18px 55px rgba(0, 0, 0, 0.08);
+  --display: "Manrope", sans-serif;
+  --body: "DM Sans", sans-serif;
+  --dream: "Cormorant Garamond", Georgia, serif;
+}
+
+html {
+  background: #efefef;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% 13%, rgba(255, 255, 255, 0.98) 0 8%, transparent 29%),
+    radial-gradient(circle at 89% 22%, rgba(185, 185, 180, 0.2) 0 8%, transparent 30%),
+    linear-gradient(135deg, #f8f8f8 0%, #eeeeee 48%, #f9f9f9 100%);
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::before {
+  width: 42vw;
+  height: 42vw;
+  right: -15vw;
+  top: 12vh;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  box-shadow: 0 0 120px rgba(255, 255, 255, 0.92) inset;
+  filter: blur(2px);
+}
+
+body::after {
+  inset: 0;
+  opacity: 0.18;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.28) 0.45px, transparent 0.45px);
+  background-size: 5px 5px;
+  mix-blend-mode: multiply;
+}
+
+::selection {
+  color: #fff;
+  background: #111;
+}
+
+img,
+video {
+  filter: none;
+}
+
+button,
+a,
+input,
+select,
+textarea,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 4px;
+}
+
+h1,
+h2,
+h3,
+blockquote {
+  text-wrap: balance;
+}
+
+h1 em,
+h2 em,
+blockquote em,
+.hero-copy h1 em,
+.page-hero h1 em,
+.dashboard-welcome h1 em,
+.safety-hero h1 em,
+.apply-intro h1 em,
+.athlete-profile-heading h1 em,
+.member-page-hero h1 em,
+.pricing-heading h2 em {
+  color: inherit;
+  font-family: var(--dream);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.prototype-bar {
+  height: 31px;
+  color: #fff;
+  background: #0a0a0a;
+  border: 0;
+}
+
+.prototype-bar span {
+  color: #111;
+  background: #fff;
+  border-radius: 999px;
+}
+
+.prototype-bar p {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.site-header {
+  height: 78px;
+  top: 0;
+  color: #111;
+  background: rgba(250, 250, 250, 0.78);
+  border: 0;
+  border-bottom: 1px solid rgba(10, 10, 10, 0.11);
+  backdrop-filter: blur(22px) saturate(0.2);
+}
+
+.brand {
+  color: #111;
+  text-transform: none;
+  letter-spacing: -0.045em;
+}
+
+.brand-icon,
+.word-ball {
+  border-color: #111;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+}
+
+.desktop-nav a {
+  position: relative;
+  color: #111;
+}
+
+.desktop-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -9px;
+  height: 1px;
+  background: #111;
+  transition: right 0.25s ease;
+}
+
+.desktop-nav a:hover::after {
+  right: 0;
+}
+
+.header-actions .button-dark,
+.button-primary,
+.button-dark {
+  color: #fff;
+  background: #111;
+  border-color: #111;
+}
+
+.button,
+.mentor-card-actions button,
+.privacy-toggle,
+.premium-text-link {
+  border-radius: 999px;
+}
+
+.button {
+  min-height: 52px;
+  padding-inline: 25px;
+  letter-spacing: 0.01em;
+  box-shadow: none;
+}
+
+.button:hover,
+.button-primary:hover,
+.button-dark:hover {
+  color: #111;
+  background: #fff;
+  border-color: #111;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+}
+
+.button-outline {
+  background: rgba(255, 255, 255, 0.48);
+  border-color: rgba(17, 17, 17, 0.45);
+  backdrop-filter: blur(12px);
+}
+
+.menu-button span {
+  background: #111;
+}
+
+.mobile-nav {
+  top: 109px;
+  color: #111;
+  background: rgba(250, 250, 250, 0.96);
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(22px);
+}
+
+.mobile-nav a {
+  border-bottom-color: rgba(0, 0, 0, 0.09);
+}
+
+.page.active {
+  animation: dreamPageIn 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@keyframes dreamPageIn {
+  from { opacity: 0; transform: translateY(12px); }
+}
+
+.eyebrow {
+  color: #111;
+  letter-spacing: 0.17em;
+}
+
+.eyebrow i {
+  width: 28px;
+  height: 1px;
+  background: #111;
+}
+
+/* Home hero */
+.hero {
+  min-height: 740px;
+  padding: 76px max(6vw, 32px) 86px;
+  gap: clamp(48px, 7vw, 116px);
+  background:
+    radial-gradient(circle at 17% 22%, #fff 0, rgba(255, 255, 255, 0.78) 18%, transparent 43%),
+    linear-gradient(145deg, rgba(250, 250, 250, 0.92), rgba(225, 225, 225, 0.78));
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-copy::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 220px;
+  height: 220px;
+  left: -80px;
+  top: -65px;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  border-radius: 50%;
+}
+
+.hero-copy h1 {
+  margin: 23px 0 26px;
+  color: #0a0a0a;
+  font-size: clamp(60px, 6.7vw, 104px);
+  line-height: 0.88;
+  letter-spacing: -0.075em;
+}
+
+.hero-copy h1 em {
+  display: inline-block;
+  padding-right: 0.04em;
+  font-size: 1.08em;
+}
+
+.hero-copy > p {
+  max-width: 550px;
+  color: #4e4e4e;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.hero-actions {
+  margin-top: 37px;
+}
+
+.play-link {
+  color: #111;
+}
+
+.play-link span {
+  color: #111;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(0, 0, 0, 0.22);
+  border-radius: 50%;
+  backdrop-filter: blur(8px);
+}
+
+.trust-line {
+  margin-top: 56px;
+}
+
+.trust-line p {
+  color: #5c5c5c;
+}
+
+.avatar-stack span,
+.avatar-stack span:first-child,
+.avatar-stack span:nth-child(2),
+.avatar-stack span:nth-child(3),
+.avatar-stack span:last-child {
+  color: #fff;
+  background: #111;
+  border-color: #efefef;
+  border-radius: 50%;
+}
+
+.avatar-stack span:nth-child(even) {
+  color: #111;
+  background: #fff;
+}
+
+.hero-visual {
+  min-height: 565px;
+  isolation: isolate;
+}
+
+.court-lines {
+  width: min(51vw, 720px);
+  height: min(51vw, 720px);
+  border-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  opacity: 0.9;
+  transform: none;
+}
+
+.court-lines::before,
+.court-lines::after {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.mentor-poster {
+  width: min(100%, 560px);
+  min-height: 570px;
+  position: relative;
+  color: #fff;
+  background: #111 !important;
+  border: 8px solid rgba(255, 255, 255, 0.9);
+  border-radius: 190px 190px 28px 28px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.23), 22px 24px 0 rgba(255, 255, 255, 0.62);
+  transform: rotate(1.5deg);
+  overflow: hidden;
+  animation: dreamFloat 7s ease-in-out infinite;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 570px;
+  display: block;
+  object-fit: cover;
+  object-position: 53% center;
+}
+
+.mentor-poster::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.24), transparent 35%, rgba(0, 0, 0, 0.84) 100%);
+  pointer-events: none;
+}
+
+.poster-top {
+  position: absolute;
+  z-index: 3;
+  inset: 18px 18px auto;
+  padding: 0;
+}
+
+.availability,
+.verified-badge {
+  color: #111;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+}
+
+.availability i {
+  background: #111;
+}
+
+.poster-info {
+  min-height: 0;
+  position: absolute;
+  z-index: 3;
+  inset: auto 0 0;
+  padding: 44px 30px 28px;
+  align-items: end;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.72));
+  border-top: 0;
+}
+
+.sport-label {
+  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: 0.14em;
+}
+
+.poster-info h2 {
+  margin: 7px 0 4px;
+  font-family: var(--dream);
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.poster-info p {
+  max-width: 340px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.round-button {
+  color: #111;
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+}
+
+.floating-pill {
+  padding: 10px 17px;
+  color: #111;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 999px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(14px);
+}
+
+.pill-top { left: -25px; top: 48px; }
+.pill-bottom { right: -24px; bottom: 44px; }
+
+@keyframes dreamFloat {
+  0%, 100% { transform: rotate(1.5deg) translateY(0); }
+  50% { transform: rotate(0.6deg) translateY(-10px); }
+}
+
+/* Shared editorial sections */
+.sports-strip {
+  padding-block: 31px;
+  color: #fff;
+  background: #0a0a0a;
+  border-bottom: 1px solid #333;
+}
+
+.sports-strip > p {
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.12em;
+}
+
+.sport-list {
+  gap: 19px 35px;
+}
+
+.sport-list button {
+  color: #fff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  opacity: 0.78;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.sport-list button:hover {
+  color: #111;
+  background: #fff;
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.sport-list span {
+  color: #fff;
+  filter: grayscale(1) contrast(1.35);
+}
+
+.section {
+  padding-block: clamp(82px, 9vw, 132px);
+}
+
+.section-heading h2,
+.page-hero h1,
+.dashboard-welcome h1,
+.safety-hero h1,
+.apply-intro h1,
+.athlete-profile-heading h1,
+.member-page-hero h1,
+.pricing-heading h2 {
+  letter-spacing: -0.055em;
+}
+
+.section-heading h2 {
+  font-size: clamp(48px, 5.5vw, 78px);
+  line-height: 0.98;
+}
+
+.section-heading h2 em {
+  color: inherit;
+}
+
+.split-heading > p {
+  color: #606060;
+  line-height: 1.7;
+}
+
+.steps-grid {
+  gap: 22px;
+  border-top: 0;
+}
+
+.step-card,
+.mentor-card,
+.filters-panel,
+.request-panel,
+.stat-row,
+.safety-grid article,
+.application-card,
+.insight-card,
+.upload-card,
+.reels-library,
+.pricing-card,
+.premium-feature-grid article,
+.compare-table {
+  background: rgba(255, 255, 255, 0.66);
+  border: 1px solid rgba(0, 0, 0, 0.13);
+  border-radius: 26px;
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+
+.step-card {
+  min-height: 340px;
+  padding: 34px;
+}
+
+.step-card + .step-card {
+  border-left: 1px solid rgba(0, 0, 0, 0.13);
+}
+
+.step-card.featured-step {
+  color: #fff;
+  background: #111;
+  transform: translateY(-10px);
+}
+
+.step-number,
+.step-card p,
+.featured-step p {
+  color: inherit;
+  opacity: 0.6;
+}
+
+.step-icon,
+.featured-step .step-icon {
+  color: #111;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+}
+
+.featured-step .step-icon {
+  color: #fff;
+  background: #2b2b2b;
+  border-color: rgba(255, 255, 255, 0.17);
+}
+
+.featured-section,
+.page-hero,
+.mentor-apply-layout,
+.athlete-profile-page,
+.premium-features,
+.premium-pricing {
+  background: transparent;
+}
+
+.featured-section {
+  border-top-color: #d8d8d8;
+}
+
+.carousel-nav button {
+  color: #111;
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.22);
+  border-radius: 50%;
+}
+
+.carousel-nav button:hover {
+  color: #fff;
+  background: #111;
+}
+
+.swipe-carousel {
+  scrollbar-color: #111 #dddddd;
+}
+
+.swipe-carousel::-webkit-scrollbar-track {
+  background: #dddddd;
+}
+
+.swipe-carousel::-webkit-scrollbar-thumb {
+  background: #111;
+}
+
+.mentor-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mentor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.13);
+}
+
+.mentor-art,
+.profile-header,
+.mini-avatar {
+  color: #fff;
+  background: linear-gradient(145deg, #4a4a4a, #111) !important;
+}
+
+.mentor-art::before {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.mentor-art::after {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mentor-status,
+.tag,
+.pending-chip,
+.demo-chip,
+.connection-status,
+.premium-feature-grid article > b,
+.plan-topline > b {
+  color: #111;
+  background: #f3f3f3;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 999px;
+}
+
+.mentor-meta,
+.mentor-meta span:last-child,
+.mentor-role {
+  color: #626262;
+}
+
+.mentor-card-body {
+  padding: 24px;
+}
+
+.mentor-card-actions {
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+.mentor-card-actions button {
+  color: #111;
+  background: transparent;
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
+.mentor-card-actions button:last-child {
+  color: #fff;
+  background: #111;
+}
+
+.statement-section {
+  min-height: 560px;
+  position: relative;
+  color: #fff;
+  background:
+    radial-gradient(circle at 50% 10%, #333 0, transparent 35%),
+    #090909;
+  border-block: 0;
+  overflow: hidden;
+}
+
+.statement-section::before {
+  content: "";
+  width: min(76vw, 900px);
+  height: min(76vw, 900px);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.statement-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.statement-kicker {
+  color: rgba(255, 255, 255, 0.58);
+  letter-spacing: 0.18em;
+}
+
+blockquote {
+  font-family: var(--dream);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.statement-section blockquote em {
+  color: inherit;
+}
+
+/* Directory and dashboard */
+.page-hero {
+  padding-block: 105px 82px;
+  color: #111;
+  border-bottom: 1px solid var(--line);
+}
+
+.compact-hero .eyebrow {
+  color: #111;
+}
+
+.compact-hero > p,
+.directory-top p,
+.empty-state p,
+.dashboard-empty p,
+.panel-heading span {
+  color: #666666;
+}
+
+.directory-layout {
+  padding-top: 68px;
+}
+
+.filters-panel {
+  top: 98px;
+  padding: 28px;
+}
+
+.filter-header button,
+.safety-note button {
+  color: #111;
+}
+
+input,
+select,
+textarea {
+  color: #111;
+  background: rgba(247, 247, 247, 0.86);
+  border-color: rgba(0, 0, 0, 0.17);
+  border-radius: 14px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #111;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.09);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: #111;
+}
+
+.safety-mini,
+.selected-mentor,
+.empty-state,
+.dashboard-empty,
+.safety-note,
+.reel-safety-note,
+.recruiter-access-note {
+  background: rgba(232, 232, 232, 0.74);
+  border-radius: 18px;
+}
+
+.safety-mini > span,
+.empty-illustration,
+.safety-note > div > span,
+.reel-safety-note > span,
+.recruiter-access-note > span {
+  color: #fff;
+  background: #111;
+  border-radius: 50%;
+}
+
+.dashboard-shell {
+  background: transparent;
+}
+
+.dashboard-sidebar {
+  color: #fff;
+  background:
+    radial-gradient(circle at 50% 0, #333 0, transparent 36%),
+    #0b0b0b;
+  border-right: 1px solid #333;
+}
+
+.tiny-label,
+.dashboard-sidebar nav button,
+.dashboard-sidebar nav button.active,
+.dashboard-help small {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.dashboard-sidebar nav button.active {
+  color: #111;
+  background: #fff;
+  border-radius: 12px;
+}
+
+.dashboard-help {
+  border-color: rgba(255, 255, 255, 0.24);
+  border-radius: 16px;
+}
+
+.dashboard-help > span {
+  color: #111;
+  background: #fff;
+}
+
+.stat-row div,
+.panel-heading,
+.request-item {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Athlete profile and reels */
+.account-menu summary {
+  color: #111;
+  border-color: rgba(0, 0, 0, 0.36);
+  border-radius: 999px;
+}
+
+.account-menu summary span,
+.account-menu-list button > span:first-child,
+.card-kicker,
+.athlete-profile-heading .eyebrow,
+.profile-reels .card-kicker {
+  color: #111;
+}
+
+.account-menu-list {
+  color: #111;
+  background: rgba(255, 255, 255, 0.94);
+  border-color: rgba(0, 0, 0, 0.16);
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(16px);
+  overflow: hidden;
+}
+
+.account-menu-list button:hover {
+  background: #efefef;
+}
+
+.account-menu-list button + button {
+  border-top-color: #dddddd;
+}
+
+.account-menu-list button > span:first-child {
+  color: #fff;
+  background: #111;
+  border-radius: 50%;
+}
+
+.athlete-profile-heading,
+.profile-reels-heading,
+.member-page-hero {
+  color: #fff;
+  background:
+    radial-gradient(circle at 79% 14%, #373737 0, transparent 30%),
+    #090909;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.athlete-profile-heading h1 em,
+.athlete-profile-heading .eyebrow,
+.member-page-hero h1 em,
+.member-page-hero .eyebrow,
+.profile-reels .card-kicker {
+  color: #fff;
+}
+
+.safety-hero .eyebrow {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.safety-hero .eyebrow i,
+.athlete-profile-heading .eyebrow i,
+.member-page-hero .eyebrow i {
+  background: #fff;
+}
+
+.statement-section .button-primary,
+.safety-hero .button-primary,
+.member-page-hero .button-primary,
+.recruiter-pricing-card .button-primary {
+  color: #111;
+  background: #fff;
+  border-color: #fff;
+}
+
+.statement-section .button-primary:hover,
+.safety-hero .button-primary:hover,
+.member-page-hero .button-primary:hover,
+.recruiter-pricing-card .button-primary:hover {
+  color: #fff;
+  background: transparent;
+  border-color: #fff;
+}
+
+.profile-heading-note {
+  color: #111;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 18px;
+  box-shadow: none;
+  backdrop-filter: blur(12px);
+}
+
+.athlete-card {
+  background: rgba(255, 255, 255, 0.76);
+  border-color: rgba(0, 0, 0, 0.14);
+  border-radius: 28px;
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.11);
+  overflow: hidden;
+}
+
+.athlete-card::before {
+  background:
+    linear-gradient(135deg, transparent 0 49%, rgba(255, 255, 255, 0.14) 49% 50%, transparent 50%),
+    #2b2b2b;
+}
+
+.athlete-card-top,
+.profile-shortcuts,
+.level-card {
+  color: #fff;
+  background: #111;
+}
+
+.profile-visibility,
+.profile-visibility.public,
+.connection-status.connected {
+  color: #111;
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.14);
+}
+
+.profile-visibility i,
+.profile-visibility.public i,
+.connection-status.connected i {
+  background: #111;
+}
+
+.privacy-toggle {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.52);
+}
+
+.athlete-avatar {
+  background: #efefef;
+  border-color: #fff;
+  box-shadow: 0 0 0 1px #111;
+}
+
+.avatar-head,
+.avatar-body {
+  background: #c8c8c8;
+}
+
+.athlete-avatar button,
+.profile-shortcuts button > span,
+.upload-icon,
+.library-heading > span,
+.reels-empty > div,
+.premium-feature-grid article > i {
+  color: #fff;
+  background: #111;
+}
+
+.athlete-identity button,
+.activity-link,
+.activity-list b,
+.chart-summary p,
+.reel-item-meta,
+.reel-item-actions button {
+  color: #111;
+}
+
+.profile-completion,
+.video-dropzone,
+.reels-empty {
+  background: rgba(238, 238, 238, 0.7);
+}
+
+.athlete-facts,
+.athlete-facts div,
+.chart-tabs,
+.watch-metrics,
+.watch-metrics div,
+.activity-list,
+.activity-list > div {
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.completion-track,
+.xp-track {
+  background: #dedede;
+}
+
+.chart-grid line {
+  stroke: #dedede;
+}
+
+.completion-track i,
+.xp-track i,
+#growth-line {
+  background: #111;
+  stroke: #111;
+}
+
+#growth-points circle {
+  fill: #fff;
+  stroke: #111;
+}
+
+.chart-tabs button.active {
+  border-bottom-color: #111;
+}
+
+.watch-visual {
+  background: #d8d8d8;
+}
+
+.watch-visual > div {
+  color: #fff;
+  background: #111;
+  border-color: #3c3c3c;
+  box-shadow: 0 0 0 8px #111;
+}
+
+.watch-visual span,
+.watch-visual small {
+  color: #fff;
+}
+
+.level-card {
+  border-bottom-color: #fff;
+}
+
+.level-progress {
+  border-bottom-color: #fff;
+}
+
+.level-ring {
+  border-color: #fff;
+  border-right-color: #666;
+}
+
+.profile-shortcuts button:hover {
+  background: #262626;
+}
+
+.reels-workspace {
+  gap: 24px;
+}
+
+.profile-reels {
+  background: #111;
+  border-bottom-color: #fff;
+}
+
+.video-dropzone .upload-icon {
+  color: #fff;
+  background: #111;
+}
+
+.video-dropzone {
+  border-color: rgba(0, 0, 0, 0.4);
+  border-radius: 22px;
+}
+
+.video-dropzone:hover,
+.video-dropzone.dragging {
+  background: #e7e7e7;
+  border-color: #111;
+}
+
+.reel-visibility label {
+  border-color: rgba(0, 0, 0, 0.16);
+  border-radius: 16px;
+}
+
+.reel-visibility label:has(input:checked) {
+  background: #ededed;
+  border-color: #111;
+  box-shadow: 3px 3px 0 #111;
+}
+
+.reel-item {
+  background: #111;
+  border-bottom-color: #fff;
+  border-radius: 20px;
+}
+
+.reel-item-meta,
+.reel-item-actions button {
+  color: #fff;
+}
+
+.reels-empty > div {
+  box-shadow: 8px 8px 0 #444;
+}
+
+/* Premium */
+.member-page-hero > div:first-child > p,
+.member-page-hero > div:first-child > small,
+.premium-text-link {
+  color: rgba(255, 255, 255, 0.67);
+}
+
+.premium-text-link {
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+.premium-pass {
+  color: #111;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 28px;
+  box-shadow: 20px 22px 0 #303030;
+  backdrop-filter: blur(12px);
+}
+
+.premium-pass div {
+  color: #fff;
+  background: #111;
+  border-radius: 18px;
+}
+
+.premium-pass small {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.premium-feature-grid {
+  gap: 18px;
+  border: 0;
+}
+
+.premium-feature-grid article {
+  border: 1px solid rgba(0, 0, 0, 0.13) !important;
+}
+
+.premium-feature-grid article > i {
+  border-radius: 50%;
+}
+
+.premium-feature-grid article > b,
+.plan-topline > b {
+  color: #111;
+}
+
+.pricing-grid {
+  gap: 24px;
+}
+
+.pricing-card,
+.recruiter-pricing-card {
+  color: #111;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: var(--shadow-soft);
+}
+
+.recruiter-pricing-card {
+  color: #fff;
+  background: #111;
+}
+
+.plan-prices,
+.recruiter-pricing-card .plan-prices,
+.plan-prices > div + div,
+.recruiter-pricing-card .plan-prices > div + div,
+.pricing-card li,
+.recruiter-pricing-card li {
+  border-color: rgba(127, 127, 127, 0.35);
+}
+
+.annual-price,
+.recruiter-pricing-card .annual-price {
+  background: rgba(128, 128, 128, 0.08);
+}
+
+.plan-prices b,
+.recruiter-pricing-card .plan-prices b,
+.pricing-card li::before,
+.recruiter-pricing-card li::before {
+  color: inherit;
+}
+
+.recruiter-access-note {
+  border-left: 0;
+}
+
+.plan-compare {
+  color: #fff;
+  background:
+    radial-gradient(circle at 12% 15%, #303030 0, transparent 28%),
+    #090909;
+  border-bottom: 0;
+}
+
+.compare-intro .card-kicker,
+.compare-row strong:last-child,
+.compare-head strong:last-child {
+  color: inherit;
+}
+
+.compare-table {
+  color: #111;
+  background: #fff;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+}
+
+.compare-head {
+  color: #fff;
+  background: #111;
+}
+
+.compare-row {
+  border-bottom-color: #dddddd;
+}
+
+/* Safety, forms, footer and overlays */
+.safety-hero {
+  color: #fff;
+  background:
+    radial-gradient(circle at 80% 40%, #383838 0, transparent 29%),
+    #090909;
+  border-bottom: 0;
+}
+
+.safety-hero > div:first-child > p {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.shield-art {
+  color: #111;
+  background: rgba(255, 255, 255, 0.88);
+  filter: drop-shadow(0 32px 42px rgba(0, 0, 0, 0.28));
+}
+
+.shield-art div {
+  color: #fff;
+  background: #111;
+}
+
+.safety-grid article > span {
+  color: #111;
+}
+
+.safety-grid {
+  gap: 18px;
+  border-top: 0;
+}
+
+.safety-grid article + article {
+  border-left: 1px solid rgba(0, 0, 0, 0.13);
+}
+
+.safety-note {
+  border-left: 0;
+}
+
+.application-card {
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.1);
+}
+
+.mentor-benefits span {
+  color: #fff;
+  background: #111;
+}
+
+footer {
+  color: #fff;
+  background: #080808;
+  border-top: 1px solid #333;
+}
+
+footer > p,
+footer button,
+footer small {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+footer small {
+  border-top-color: rgba(255, 255, 255, 0.14);
+}
+
+.light-brand {
+  color: #fff;
+}
+
+.modal-backdrop {
+  background: rgba(5, 5, 5, 0.66);
+  backdrop-filter: blur(14px);
+}
+
+.modal {
+  background: rgba(250, 250, 250, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 26px;
+  box-shadow: 0 35px 100px rgba(0, 0, 0, 0.34);
+}
+
+.modal-close {
+  color: #111;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.toast {
+  color: #fff;
+  background: rgba(10, 10, 10, 0.93);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 18px;
+  box-shadow: 0 24px 65px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(14px);
+}
+
+.profile-header {
+  border-bottom: 1px solid #333;
+}
+
+.selected-mentor {
+  border-left: 0;
+}
+
+.form-title > span,
+.privacy-copy,
+.profile-details span {
+  color: #666;
+}
+
+.toast > span {
+  color: #111;
+  background: #fff;
+}
+
+.toast p {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+/* Keep every non-photographic visual monochrome. */
+.sport-list span,
+.step-icon,
+.premium-feature-grid i,
+.activity-icon,
+.watch-visual span,
+.profile-shortcuts button > span,
+.upload-icon,
+.empty-illustration,
+.shield-art,
+.safety-mini > span {
+  filter: grayscale(1);
+}
+
+@media (max-width: 1180px) {
+  .hero {
+    grid-template-columns: minmax(370px, 0.9fr) minmax(400px, 1.1fr);
+    gap: 50px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(58px, 7vw, 82px);
+  }
+
+  .directory-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 72px;
+  }
+
+  .hero-copy {
+    max-width: 680px;
+  }
+
+  .hero-visual {
+    width: min(100%, 650px);
+    margin-inline: auto;
+  }
+
+  .mentor-poster {
+    width: min(88%, 560px);
+  }
+
+  .court-lines {
+    width: min(90vw, 690px);
+    height: min(90vw, 690px);
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .step-card.featured-step {
+    transform: none;
+  }
+
+  .directory-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .filters-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    height: 70px;
+  }
+
+  .mobile-nav {
+    top: 101px;
+  }
+
+  .hero {
+    padding: 62px 21px 72px;
+    gap: 54px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(52px, 16vw, 72px);
+    line-height: 0.91;
+  }
+
+  .hero-copy > p {
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+  }
+
+  .play-link {
+    justify-content: center;
+  }
+
+  .trust-line {
+    margin-top: 42px;
+  }
+
+  .hero-visual {
+    min-height: 470px;
+  }
+
+  .floating-pill {
+    display: block;
+  }
+
+  .mentor-poster {
+    width: 94%;
+    min-height: 470px;
+    border-width: 5px;
+    border-radius: 130px 130px 24px 24px;
+    box-shadow: 12px 15px 0 rgba(255, 255, 255, 0.67), 0 22px 60px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero-photo {
+    height: 470px;
+  }
+
+  .poster-top {
+    inset: 14px 12px auto;
+    gap: 7px;
+  }
+
+  .availability,
+  .verified-badge {
+    padding: 5px 8px;
+    font-size: 8px;
+  }
+
+  .poster-info {
+    padding: 35px 20px 22px;
+  }
+
+  .poster-info h2 {
+    font-size: 34px;
+  }
+
+  .poster-info p {
+    max-width: 235px;
+  }
+
+  .pill-top {
+    left: 0;
+    top: -20px;
+  }
+
+  .pill-bottom {
+    right: -2px;
+    bottom: -20px;
+  }
+
+  .section,
+  .page-hero,
+  .premium-features,
+  .premium-pricing {
+    padding-inline: 21px;
+  }
+
+  .section-heading h2,
+  .page-hero h1,
+  .dashboard-welcome h1,
+  .safety-hero h1,
+  .apply-intro h1,
+  .athlete-profile-heading h1,
+  .member-page-hero h1,
+  .pricing-heading h2 {
+    font-size: clamp(43px, 13vw, 60px);
+  }
+
+  .steps-grid,
+  .directory-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .step-card {
+    min-height: 285px;
+  }
+
+  .mentor-card,
+  .step-card,
+  .filters-panel,
+  .request-panel,
+  .stat-row,
+  .safety-grid article,
+  .application-card,
+  .insight-card,
+  .upload-card,
+  .reels-library,
+  .pricing-card,
+  .premium-feature-grid article,
+  .compare-table {
+    border-radius: 20px;
+  }
+
+  .swipe-carousel .mentor-card {
+    flex-basis: 84vw;
+  }
+
+  .statement-section {
+    min-height: 500px;
+    padding-inline: 24px;
+  }
+
+  .athlete-card {
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.1);
+  }
+
+  .profile-heading-note {
+    border-radius: 14px;
+  }
+
+  .premium-pass {
+    box-shadow: 10px 12px 0 #303030;
+  }
+
+  .modal {
+    border-radius: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

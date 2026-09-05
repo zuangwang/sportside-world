@@ -4,17 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Sportside connects young athletes with trusted sports mentors.">
+  <meta name="theme-color" content="#f4f4f4">
   <title>Sportside — Find your next move</title>
   <link rel="icon" type="image/jpeg" href="assets/sportside-logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="styles-extra.css">
   <link rel="stylesheet" href="styles-responsive.css">
   <link rel="stylesheet" href="sportside-theme.css">
   <link rel="stylesheet" href="profile.css">
   <link rel="stylesheet" href="member-features.css">
+  <link rel="stylesheet" href="dreamscape.css">
 </head>
 <body>
   <div class="prototype-bar">
@@ -52,7 +54,7 @@
 
   <nav class="mobile-nav" aria-label="Mobile navigation">
     <a href="#discover" data-route="discover">Find a mentor</a>
-    <a href="#home" data-route="home">How it works</a>
+    <a href="#how-it-works" data-scroll="how-it-works">How it works</a>
     <a href="#safety" data-route="safety">Safety</a>
     <a href="#mentor" data-route="mentor">Become a mentor</a>
     <a href="#athlete-profile" data-route="athlete-profile">My profile</a>
@@ -81,27 +83,21 @@
         <div class="hero-visual" aria-label="Featured mentor preview">
           <div class="court-lines" aria-hidden="true"></div>
           <div class="mentor-poster">
+            <img class="hero-photo" src="assets/sportside-dream-team.webp" width="1672" height="941" alt="Young athletes listening to a mentor together after practice" fetchpriority="high" decoding="async">
             <div class="poster-top">
-              <span class="availability"><i></i> Available this month</span>
-              <span class="verified-badge">✓ Verified</span>
-            </div>
-            <div class="poster-person">
-              <div class="person-art">
-                <span class="jersey-number">24</span>
-                <span class="person-initials">MJ</span>
-              </div>
-              <div class="quote-card">“Confidence is a skill.<br>We can train it.”</div>
+              <span class="availability"><i></i> Real guidance, human connection</span>
+              <span class="verified-badge">✓ Safety first</span>
             </div>
             <div class="poster-info">
               <div>
-                <span class="sport-label">BASKETBALL · COLLEGE ATHLETE</span>
-                <h2>Maya Johnson</h2>
-                <p>Confidence, recruiting & balancing school</p>
+                <span class="sport-label">MENTORSHIP BUILT AROUND YOUR GAME</span>
+                <h2>Find your people.</h2>
+                <p>One trusted conversation can change what comes next.</p>
               </div>
-              <button type="button" class="round-button" data-mentor-id="maya-johnson" aria-label="View Maya's profile">↗</button>
+              <button type="button" class="round-button" data-route="discover" aria-label="Meet Sportside mentors">↗</button>
             </div>
           </div>
-          <div class="floating-pill pill-top">1:1 guidance</div>
+          <div class="floating-pill pill-top">A softer way forward</div>
           <div class="floating-pill pill-bottom">Your next play starts here <span>✦</span></div>
         </div>
       </div>
